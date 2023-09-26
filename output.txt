@@ -6,6 +6,5 @@
 ['separator', ')']
 ['identifier', 's']
 ['assignment', '=']
-['real', '22']
-['real', '00']
+['real', '22.00']
 ['separator', ';']

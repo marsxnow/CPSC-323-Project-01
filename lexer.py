@@ -20,8 +20,8 @@ def lex(source_code):
             i += len(val)
             continue
         #integer
-        elif re.match(r"[0-9]+", source_code[i:]):
-            val = re.search(r"[0-9]+", source_code[i:]).group()
+        elif re.match(r"[0.0-9.0]+", source_code[i:]):
+            val = re.search(r"[0.0-9.0]+", source_code[i:]).group()
             tokens.append(["real", val])
             i += len(val)
             continue
