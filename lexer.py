@@ -19,7 +19,7 @@ def lex(source_code):
             tokens.append(["identifier", val])
             i += len(val)
             continue
-        #integer
+        #real numbers
         elif re.match(r"[0.0-9.0]+", source_code[i:]):
             val = re.search(r"[0.0-9.0]+", source_code[i:]).group()
             tokens.append(["real", val])
@@ -30,12 +30,12 @@ def lex(source_code):
             tokens.append(["operator", source_code[i]])
             i += 1
             continue
-        #parenthesis
+        #separator
         elif re.match(r"[();]", source_code[i]):
             tokens.append(["separator", source_code[i]])
             i += 1
             continue
-        #operator
+        #assignment
         elif re.match(r"[=<>]", source_code[i]):
             tokens.append(["assignment", source_code[i]])
             i += 1
