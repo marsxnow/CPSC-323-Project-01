@@ -56,7 +56,7 @@ def main():
         source_code = file.read()
     
     tokens = lexer(source_code)
-    tokens = lex(source_code)
+    tokens.insert(0, "[TOKENS, LEXEME]")
 
     with open("output.txt", "w") as file:
         for token in tokens:
