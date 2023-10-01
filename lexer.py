@@ -3,7 +3,7 @@ from tabulate import tabulate
 
 
 #Lexical Analyzer
-def lex(source_code):
+def lexer(source_code):
     tokens = []
     i = 0 
     while i < len(source_code):
@@ -27,7 +27,7 @@ def lex(source_code):
             continue
         #operator
         elif re.match(r"[+\-*/]", source_code[i]):
-            tokens.append(["operator", source_code[i]])
+            tokens.append(["assignment", source_code[i]])
             i += 1
             continue
         #separator
@@ -37,7 +37,7 @@ def lex(source_code):
             continue
         #assignment
         elif re.match(r"[=<>]", source_code[i]):
-            tokens.append(["assignment", source_code[i]])
+            tokens.append(["operator", source_code[i]])
             i += 1
             continue
         #ignore whitespace
@@ -55,6 +55,7 @@ def main():
     with open("source_code.txt", "r") as file:
         source_code = file.read()
     
+    tokens = lexer(source_code)
     tokens = lex(source_code)
 
     with open("output.txt", "w") as file:
