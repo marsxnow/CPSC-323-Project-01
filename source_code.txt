@@ -1,1 +1,1 @@
-alex is sexy
+while (t < upper) s = 22.00;
